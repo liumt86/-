@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>sensors</title>
+</head>
+<body>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+
+ var _$=$
+  window.setInterval(function () {
+    _$.ajax({
+      type:"GET",
+      url:"./demo.php",
+      dataType:"json",
+      success:function(data){
+        var count = data.info.length;
+        for(i=0;i<count;i++){
+          var dom = "<tr align='center' id='"+data.info[i].id+"'><td>"+data.info[i].id+"</td><td>"+data.info[i].statement+"</td></tr>";
+          var tag = '#'+data.info[i].id;
+          var sta = '#'+data.info[i].statement;
+          if(!_$(tag).length){
+            _$("#info").append(dom);
+          }
+          _$(tag).html(dom);
+       
+        }
+
+      }
+    });
+  }, 1000);
+
+ </script>
+<body>
+  <div style='width:600px;margin:0 auto;'>
+    <table border='1' width="600px">
+      <thead>
+        <tr><th>id</th><th>statement</th></tr>
+      <tbody id='info'>
+      </tbody>
+      </thead>
+    </table>
+  </div>
+</body>
+</html>
