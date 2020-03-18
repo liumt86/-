@@ -1,4 +1,4 @@
-# People Detect System/人が特定の場所にいるかどうかを照会するシステム
+# People Detect System using raspberry pi 3/Raspberry pi 3を使って人が特定の場所にいるかどうかを照会するシステム
 ## 1. Setting セッティング
 web server is conferenced by this website [**Setting up an NGINX web server on a Raspberry Pi**](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)
 
